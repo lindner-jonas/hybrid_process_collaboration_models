@@ -1,0 +1,21 @@
+{
+  "name": "Constraints",
+  "uri": "http://example.com/constraints",
+  "prefix": "constraint",
+  "xml": {
+    "tagAlias": "lowerCase"
+  },
+  "types": [
+    {
+      "name": "ConstraintFlow",
+      "superClass": [ "bpmn:MessageFlow" ],
+      "properties": [
+        {
+          "name": "constraintType",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    }
+  ]
+}

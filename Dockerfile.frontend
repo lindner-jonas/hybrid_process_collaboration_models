@@ -1,0 +1,41 @@
+# Frontend Dockerfile for BPMN Token Simulation
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install build dependencies for native packages
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    cairo-dev \
+    jpeg-dev \
+    pango-dev \
+    musl-dev \
+    giflib-dev \
+    pixman-dev \
+    pangomm-dev \
+    libjpeg-turbo-dev \
+    freetype-dev
+
+# Copy package.json and package-lock.json (if available)
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Build the icons first (processes src/icons into lib/icons)
+RUN npm run bundle:src
+
+# Build the application
+RUN npm run bundle
+
+# Expose port for the development server
+EXPOSE 8080
+
+# Start the webpack dev server
+CMD ["npm", "run", "start:example"]

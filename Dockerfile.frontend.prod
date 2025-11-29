@@ -1,0 +1,50 @@
+# Multi-stage build for production frontend
+FROM node:18-alpine AS builder
+
+# Set working directory
+WORKDIR /app
+
+# Install build dependencies for native packages
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    cairo-dev \
+    jpeg-dev \
+    pango-dev \
+    musl-dev \
+    giflib-dev \
+    pixman-dev \
+    pangomm-dev \
+    libjpeg-turbo-dev \
+    freetype-dev
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install ALL dependencies (including devDependencies) for building
+RUN npm ci
+
+# Copy source code
+COPY . .
+
+# Build the icons first (processes src/icons into lib/icons)
+RUN npm run bundle:src
+
+# Build the application
+RUN npm run bundle
+
+# Production stage with Nginx
+FROM nginx:alpine
+
+# Copy built assets from builder stage
+COPY --from=builder /app/example /usr/share/nginx/html
+
+# Copy custom nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]

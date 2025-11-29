@@ -1,0 +1,136 @@
+{
+  "name": "bpmn-js-token-simulation",
+  "version": "0.38.1",
+  "description": "bpmn-js token simulation extension",
+  "module": "lib/index.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "all": "run-s bundle:src lint test bundle",
+    "bundle:src": "rollup -c --bundleConfigAsCjs",
+    "bundle": "webpack --mode production",
+    "bundle:watch": "webpack -w",
+    "start": "cross-env SINGLE_START=modeler npm run dev",
+    "start:example": "webpack serve --static ./example --open",
+    "lint": "eslint .",
+    "test": "karma start",
+    "dev": "npm test -- --auto-watch --no-single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bpmn-io/bpmn-js-token-simulation.git"
+  },
+  "author": "bpmn.io contributors",
+  "contributors": [
+    {
+      "name": "Patrick Dehn",
+      "url": "https://github.com/pedesen"
+    },
+    {
+      "name": "Philipp Fromme",
+      "url": "https://github.com/philippfromme"
+    },
+    {
+      "name": "Sebastian Warnke",
+      "url": "https://github.com/sebwarnke"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bpmn-io/bpmn-js-token-simulation/issues"
+  },
+  "homepage": "https://github.com/bpmn-io/bpmn-js-token-simulation#readme",
+  "files": [
+    "assets",
+    "lib",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 16"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "devDependencies": {
+    "@bpmn-io/add-exporter": "^0.2.0",
+    "@bpmn-io/properties-panel": "^3.26.0",
+    "babel-loader": "^10.0.0",
+    "babel-plugin-istanbul": "^7.0.0",
+    "bpmn-js": "^18.2.0",
+    "bpmn-js-properties-panel": "^5.31.1",
+    "chai": "^4.5.0",
+    "copy-webpack-plugin": "^13.0.0",
+    "cross-env": "^7.0.3",
+    "downloadjs": "^1.4.7",
+    "eslint": "^9.20.0",
+    "eslint-plugin-bpmn-io": "^2.1.0",
+    "file-drops": "^0.5.0",
+    "file-open": "^0.1.1",
+    "karma": "^6.4.4",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-cli": "^2.0.0",
+    "karma-coverage": "^2.2.1",
+    "karma-debug-launcher": "^0.0.5",
+    "karma-env-preprocessor": "^0.1.1",
+    "karma-firefox-launcher": "^2.1.3",
+    "karma-mocha": "^2.0.1",
+    "karma-sinon-chai": "^2.0.2",
+    "karma-webpack": "^5.0.1",
+    "mocha": "^10.8.2",
+    "mocha-test-container-support": "^0.2.0",
+    "npm-run-all2": "^7.0.2",
+    "puppeteer": "^24.2.0",
+    "rollup": "^4.32.0",
+    "rollup-plugin-string": "^3.0.0",
+    "sinon": "^17.0.1",
+    "sinon-chai": "^3.7.0",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "dependencies": {
+    "assert": "^2.1.0",
+    "bpmn-js-token-simulation": "^0.38.1",
+    "browserify-zlib": "^0.2.0",
+    "canvas": "^3.1.0",
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.1",
+    "diagram-js": "^15.3.0",
+    "flatted": "^3.3.3",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "https-browserify": "^1.0.0",
+    "inherits-browser": "^0.1.0",
+    "jsdom": "^26.1.0",
+    "min-dash": "^4.2.2",
+    "min-dom": "^4.2.1",
+    "net": "^1.0.2",
+    "net-browserify": "^0.1.4",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "randomcolor": "^0.6.2",
+    "react": "^19.2.0",
+    "react-toastify": "^11.0.5",
+    "stream": "^0.0.3",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "sweetalert": "^2.1.2",
+    "tiny-svg": "^4.1.3",
+    "util": "^0.12.5",
+    "vm": "^0.1.0",
+    "xmldom": "^0.6.0"
+  },
+  "browser": {
+    "tls": false,
+    "net": false,
+    "url": false,
+    "fs": false,
+    "path": false,
+    "vm": false,
+    "os": false,
+    "child_process": false,
+    "crypto": false,
+    "stream": false,
+    "zlib": false
+  }
+}

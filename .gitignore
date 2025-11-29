@@ -1,0 +1,9 @@
+# Backend generated pictures
+backend/pic/
+backend/pic/*
+
+coverage
+example/dist
+lib/icons/index.js
+node_modules
+tmp

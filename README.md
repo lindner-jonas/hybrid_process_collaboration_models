@@ -11,7 +11,7 @@ The tool is build on top of the BPMN token simulation extension of bpmn.io. For 
 ## Modeling
 
 To model declarative constraints, one has to create a BPMN collaboration model and add Declare constraints between activities of different pools.
-In order to do so, one has to use the custom element that was added to the bottom of the modeling panel and then choose a constraint template from the menu on the right:
+In order to do so, one can either use the custom element that was added to the bottom of the modeling panel on the left and choose the constraint template from the menu that will be shown on the right, or use the constraint management panel on the right:
 ![Modeling Environment](https://github.com/lindner-jonas/hybrid_process_collaboration_models/blob/main/pictures/Modeling_Environment.png?raw=true)
 It should be mentioned that one current limitation is the modeling of unary constraints. The initial implementation only considered binary constraints between two activities. For that reason, to include "existence" and "absence2", one has to add a constraint between the activity of interest and an arbitrary second one, which will be disregarded later.
 
@@ -50,7 +50,7 @@ docker-compose -f .\docker-compose.prod.yml up --build
 ```
 (Provided that docker-compose is installed. For further details, [click here](https://docs.docker.com/compose/).)
 
-For accessing the modeling environment, open a browser and go to [localhost/modeler.html](http://localhost/modeler.html).
+For accessing the modeling environment, open a browser and go to [localhost/modeler.html](http://localhost/modeler.html) (port 80).
 
 ## TechnicalReport
 

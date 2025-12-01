@@ -527,3 +527,12 @@
 .bts-icon > svg {
   height: 1em;
 }
+
+.bpmn-icon-constraint-flow:before {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' stroke='currentColor' stroke-width='2' d='M12 2 L22 12 L12 22 L2 12 Z'/><circle cx='12' cy='12' r='5' fill='currentColor'/><text x='12' y='13.5' font-size='6' text-anchor='middle' fill='white' font-family='Arial, sans-serif'>C</text></svg>") center/contain no-repeat;
+}

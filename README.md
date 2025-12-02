@@ -1,8 +1,9 @@
 # Collaborations Beyond Simple Message Flows
 # And What Multi-model Processes Have to Do With It
 
-This repository includes the proof-of-concept implementation for modeling and simulating multi-model process collaboration defined as a hybrid of BPMN and Declare.
+This repository includes the proof-of-concept implementation and technical report for modeling and simulating multi-model process collaboration defined as a hybrid of BPMN and Declare.
 
+([open technical report](./Technical_Report.pdf))
 ([go to the setup directly](#Setup))
 
 The tool is build on top of the BPMN token simulation extension of bpmn.io. For further details, [click here](https://github.com/bpmn-io/bpmn-js-token-simulation).
@@ -22,7 +23,7 @@ The Declare constraints supported in the tool are:
 
 ## Simulation
 
-The simulation in the frontend is based on the initial implementation of the BPMN token simulation extension. However, the tool was extended to incorporate execution semantics for multi-model collaborations.
+The simulation in the frontend is based on the initial implementation of the BPMN token simulation extension. However, the tool was extended to incorporate execution semantics for multi-model collaborations, close to the ones described in the [technical report](./Technical_Report.pdf).
 
 ### Execution
 

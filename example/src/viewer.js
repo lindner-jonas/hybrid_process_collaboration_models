@@ -6,7 +6,7 @@ import fileDrop from 'file-drops';
 
 import fileOpen from 'file-open';
 
-import exampleXML from '../resources/example.bpmn';
+import exampleXML from '../resources/collab-constraints.bpmn';
 
 
 const url = new URL(window.location.href);

@@ -20,7 +20,7 @@ import fileOpen from 'file-open';
 
 import download from 'downloadjs';
 
-import exampleXML from '../resources/HPSM_small_example.bpmn';
+import exampleXML from '../resources/collab-constraints.bpmn';
 
 const url = new URL(window.location.href);
 
